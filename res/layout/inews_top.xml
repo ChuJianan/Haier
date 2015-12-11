@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@color/transparent"
+    android:orientation="vertical" >
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="48dp"
+        android:background="@drawable/ic_main_daohang" >
+
+        <Button
+            android:id="@+id/back"
+            android:layout_width="65dp"
+            android:layout_height="match_parent"
+            android:layout_alignParentBottom="true"
+            android:layout_alignParentLeft="true"
+            android:background="@drawable/bg_btn_back"
+            android:scaleType="centerInside"
+            android:text="返回"
+            android:textColor="@color/tv_top_bar_selector"
+            android:textSize="@dimen/text_size_15"
+             />
+        <TextView
+            android:id="@+id/top_title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:layout_centerVertical="true"
+            android:text="新闻"
+            android:textColor="@color/tv_top_bar_selector"
+            android:textSize="@dimen/text_size_20" />
+
+        <Button
+            android:id="@+id/ask"
+            android:layout_width="65dp"
+            android:layout_height="match_parent"
+            android:layout_alignParentBottom="true"
+            android:layout_alignParentRight="true"
+            android:background="@drawable/bg_btn_back"
+            android:scaleType="centerInside"
+            android:text="提问"
+            android:textColor="@color/white"
+            android:textSize="@dimen/text_size_15" />
+    </RelativeLayout>
+
+</LinearLayout>

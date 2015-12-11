@@ -1,0 +1,114 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/huhu"
+    android:layout_width="fill_parent"
+    android:layout_height="55dp"
+    android:layout_alignParentLeft="true"
+    android:layout_alignParentTop="true"
+    android:background="@drawable/ic_game_munu" >
+
+    <ImageButton
+        android:id="@+id/back"
+        android:layout_width="55dp"
+        android:layout_height="55dp"
+        android:background="@drawable/selector1" />
+
+    <RelativeLayout
+        android:id="@+id/menu"
+        android:layout_width="fill_parent"
+        android:layout_height="55dp"
+        android:layout_alignParentTop="true"
+        android:layout_toRightOf="@id/back" >
+
+        <TextView
+            android:id="@+id/user"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="17dp"
+            android:layout_marginTop="5dp"
+            android:text="用户名"
+            android:textColor="#ffffff"
+            android:textSize="15sp" />
+
+        <RelativeLayout
+            android:id="@+id/linear"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:layout_marginBottom="10dp" >
+
+            <TextView
+                android:id="@+id/core"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="15dp"
+                android:text="积分"
+                android:textColor="#ffffff"
+                android:textSize="12sp" />
+
+            <TextView
+                android:id="@+id/corenumber"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="20dp"
+                android:layout_toRightOf="@id/core"
+                android:singleLine="true"
+                android:text="10000000"
+                android:textColor="#ffffff"
+                android:textSize="12sp" />
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:id="@+id/linear"
+            android:layout_width="275dp"
+            android:layout_height="55dp"
+            android:layout_alignParentRight="true"
+            android:layout_marginLeft="100dp"
+            android:layout_toRightOf="@id/user" >
+
+            <ImageButton
+                android:id="@+id/sound"
+                android:layout_width="55dp"
+                android:layout_height="55dp"
+                android:layout_marginTop="3dp"
+                android:background="@drawable/ic_game_set" />
+
+            <ImageButton
+                android:id="@+id/image2"
+                android:layout_width="55dp"
+                android:layout_height="55dp"
+                android:layout_marginLeft="0dp"
+                android:layout_marginTop="3dp"
+                android:layout_toRightOf="@id/sound"
+                android:background="@drawable/selector5" />
+
+            <ImageButton
+                android:id="@+id/send1"
+                android:layout_width="55dp"
+                android:layout_height="55dp"
+                android:layout_marginLeft="0dp"
+                android:layout_marginTop="3dp"
+                android:layout_toRightOf="@id/image2"
+                android:background="@drawable/selector6" />
+
+            <ImageButton
+                android:id="@+id/image4"
+                android:layout_width="55dp"
+                android:layout_height="55dp"
+                android:layout_marginLeft="0dp"
+                android:layout_marginTop="3dp"
+                android:layout_toRightOf="@id/send1"
+                android:background="@drawable/selector7" />
+
+            <ImageButton
+                android:id="@+id/image5"
+                android:layout_width="60dp"
+                android:layout_height="55dp"
+                android:layout_marginLeft="0dp"
+                android:layout_marginTop="3dp"
+                android:layout_toRightOf="@id/image4"
+                android:background="@drawable/ic_game_tishi" />
+        </RelativeLayout>
+    </RelativeLayout>
+
+</RelativeLayout>

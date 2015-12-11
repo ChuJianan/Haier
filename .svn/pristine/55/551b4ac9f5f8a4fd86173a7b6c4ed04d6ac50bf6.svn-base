@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical" >
+
+    <RelativeLayout
+        android:id="@+id/tab"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:background="#ffffff" >
+
+        <TabHost
+            android:id="@+id/tabhost"
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent" >
+
+            <RelativeLayout
+                android:layout_width="fill_parent"
+                android:layout_height="fill_parent"
+                android:background="@drawable/ic_game_yinyuedi" >
+
+                <FrameLayout
+                    android:id="@android:id/tabcontent"
+                    android:layout_width="fill_parent"
+                    android:layout_height="fill_parent"
+                    android:layout_marginBottom="20.0dp"
+                    android:layout_marginLeft="140.0dp"
+                    android:layout_marginRight="20.0dp"
+                    android:layout_marginTop="10.0dp" >
+
+                    <android.support.v4.view.ViewPager
+                        android:id="@+id/pager"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent" >
+                    </android.support.v4.view.ViewPager>
+                </FrameLayout>
+
+                <TabWidget
+                    android:id="@android:id/tabs"
+                    android:layout_width="wrap_content"
+                    android:layout_height="fill_parent"
+                    android:visibility="gone" />
+
+                <RadioGroup
+                    android:id="@+id/radio_group"
+                    android:layout_width="100dip"
+                    android:layout_height="100dip"
+                    android:layout_marginLeft="40.0dp"
+                    android:layout_marginTop="10.0dp"
+                    android:background="#ffffff"
+                    android:gravity="center_vertical"
+                    android:orientation="vertical" >
+
+                    <RadioButton
+                        android:id="@+id/radio_kasa"
+                        style="@style/tab_style"
+                        android:layout_height="50dp"
+                        android:background="@drawable/selector2"
+                        android:checked="true"
+                        android:textColor="#ffffff" />
+
+                    <RadioButton
+                        android:id="@+id/radio_tongshuai"
+                        style="@style/tab_style"
+                        android:layout_height="50dp"
+                        android:background="@drawable/selector3"
+                        android:textColor="#ffffff" />
+                </RadioGroup>
+            </RelativeLayout>
+        </TabHost>
+    </RelativeLayout>
+
+</LinearLayout>

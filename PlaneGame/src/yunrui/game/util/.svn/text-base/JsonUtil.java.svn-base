@@ -1,0 +1,30 @@
+package yunrui.game.util;
+
+import java.util.ArrayList;
+import java.util.List;
+
+import org.json.JSONArray;
+import org.json.JSONException;
+import org.json.JSONObject;
+
+import yunrui.game.been.Oplist;
+import yunrui.game.been.Question;
+
+public class JsonUtil {
+
+	public static List<Question> qList=new ArrayList<Question>();
+//	public static List<Oplist>  oplists=new ArrayList<Oplist>();
+	public static List<Oplist> fromjson(String string) throws JSONException{
+			List<Oplist>  oplists=new ArrayList<Oplist>();
+			JSONArray jsonArray2=new JSONArray(string);
+			for (int j = 0; j < jsonArray2.length(); j++) {
+				JSONObject jsonObject2=(JSONObject) jsonArray2.opt(j);
+				Oplist oplist=new Oplist();
+				oplist.setId(jsonObject2.getInt("id"));
+				oplist.setOrderIndex(jsonObject2.getInt("orderIndex"));
+				oplist.setQcontext(jsonObject2.getString("qcontext"));
+				oplists.add(oplist);
+			}			
+		return oplists;
+	}
+}

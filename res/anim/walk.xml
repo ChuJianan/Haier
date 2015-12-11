@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<animation-list xmlns:apk="http://schemas.android.com/apk/res/android" apk:oneshot="false">
+    <item apk:drawable="@drawable/ic_go1" apk:duration="20" />
+    <item apk:drawable="@drawable/ic_go2" apk:duration="20" />
+    <item apk:drawable="@drawable/ic_go3" apk:duration="20" />
+    <item apk:drawable="@drawable/ic_go4" apk:duration="20" />
+    <item apk:drawable="@drawable/ic_go5" apk:duration="20" />
+    <item apk:drawable="@drawable/ic_go6" apk:duration="20" />
+    <item apk:drawable="@drawable/ic_go7" apk:duration="20" />
+    <item apk:drawable="@drawable/ic_go8" apk:duration="20" />
+    <item apk:drawable="@drawable/ic_go9" apk:duration="20" />
+    <item apk:drawable="@drawable/ic_go91" apk:duration="20" />
+    <item apk:drawable="@drawable/ic_go92" apk:duration="20" />
+    <item apk:drawable="@drawable/ic_go93" apk:duration="20" />
+    <item apk:drawable="@drawable/ic_go94" apk:duration="20" />
+    <item apk:drawable="@drawable/ic_go95" apk:duration="20" />
+    <item apk:drawable="@drawable/ic_go96" apk:duration="20" />
+    <item apk:drawable="@drawable/ic_go97" apk:duration="20" />
+    <item apk:drawable="@drawable/ic_go98" apk:duration="20" />
+    <item apk:drawable="@drawable/ic_go99" apk:duration="20" />
+    <item apk:drawable="@drawable/ic_go991" apk:duration="20" />
+    <item apk:drawable="@drawable/ic_go992" apk:duration="20" />
+    <item apk:drawable="@drawable/ic_go993" apk:duration="20" />
+    <item apk:drawable="@drawable/ic_go994" apk:duration="20" />
+    <item apk:drawable="@drawable/ic_go995" apk:duration="20" />
+    <item apk:drawable="@drawable/ic_go996" apk:duration="20" />
+</animation-list>

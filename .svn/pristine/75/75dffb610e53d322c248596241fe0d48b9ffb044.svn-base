@@ -1,0 +1,200 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.haier"
+    android:versionCode="1"
+    android:versionName="1.0" >
+
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.MOUNT_UNMOUNT_FILESYSTEMS" />
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+    <uses-permission android:name="android.permission.ACCESS_WIFI_STATE" />
+    <uses-permission android:name="android.permission.INTERNET" />
+<uses-permission android:name="android.permission.RECORD_AUDIO"> </uses-permission>
+<uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+<uses-permission android:name="android.permission.READ_PHONE_STATE"/>   
+<uses-permission android:name="android.permission.MTWEAK_USER"/> 
+ 
+ 
+    <application
+        android:name="com.haier.app.AppContext"
+        android:allowBackup="true"
+        android:icon="@drawable/icon"
+        android:label="@string/app_name"
+        android:theme="@style/AppTheme" >
+        <activity
+            android:name="com.haier.activity.WelcomeActivity"
+            android:label="@string/app_name"
+            android:screenOrientation="portrait" >
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name="com.haier.activity.LoginActivity"
+            android:screenOrientation="portrait"
+            android:theme="@android:style/Theme.NoTitleBar" >
+        </activity>
+        <activity
+            android:name="com.haier.activity.MainActivity"
+            android:screenOrientation="portrait"
+            android:theme="@android:style/Theme.NoTitleBar"
+            android:windowSoftInputMode="adjustResize|adjustPan|stateHidden" >
+        </activity>
+        <activity
+            android:name="com.haier.activity.SelectGameActivity"
+            android:screenOrientation="landscape"
+            android:theme="@android:style/Theme.NoTitleBar" >
+        </activity>
+         <activity
+            android:name="com.haier.activity.WeiGameActivity"
+            android:screenOrientation="landscape"
+            android:theme="@android:style/Theme.NoTitleBar" >
+        </activity>
+         <activity
+            android:name="com.haier.activity.WeiHaiKaSaActivity"
+            android:screenOrientation="landscape"
+            android:theme="@android:style/Theme.NoTitleBar" >
+        </activity>
+        <activity
+            android:name="com.haier.activity.KnowledgeSeaActivity"
+            android:screenOrientation="landscape"
+            android:theme="@android:style/Theme.NoTitleBar" >
+        </activity>
+         <activity
+            android:name="com.haier.activity.KnowledgeXiaoActivity"
+            android:screenOrientation="landscape"
+            android:theme="@android:style/Theme.NoTitleBar" >
+        </activity>
+         <activity
+            android:name="com.haier.activity.WeiFeiends"
+            android:theme="@android:style/Theme.NoTitleBar" >
+        </activity>
+        <activity
+            android:name="com.haier.activity.VidioActivity"
+            android:screenOrientation="landscape" >
+        </activity>
+        <activity
+            android:name="com.haier.activity.KnowledgeActivity"
+            android:screenOrientation="landscape" >
+        </activity>
+        <activity
+            android:name="com.haier.activity.RegisterActivity"
+            android:screenOrientation="portrait"
+            android:theme="@android:style/Theme.NoTitleBar" >
+        </activity>
+        <activity
+            android:name="com.haier.activity.FindPwd"
+            android:screenOrientation="portrait"
+            android:theme="@android:style/Theme.NoTitleBar" >
+        </activity>
+        <activity
+            android:name="com.haier.activity.NewPwdActivity"
+            android:screenOrientation="portrait"
+            android:theme="@android:style/Theme.NoTitleBar" >
+        </activity>
+        <activity
+            android:name="com.haier.activity.StudyActivity"
+            android:screenOrientation="landscape"
+            android:theme="@android:style/Theme.NoTitleBar" >
+        </activity>
+        <activity
+            android:name="com.haier.activity.Vidio2Activity"
+            android:screenOrientation="landscape"
+            android:theme="@android:style/Theme.NoTitleBar" >
+        </activity>
+        <activity
+            android:name="com.haier.activity.GameListActivity"
+            android:screenOrientation="landscape"
+            android:theme="@android:style/Theme.NoTitleBar" >
+        </activity>
+        <activity
+            android:name="com.haier.activity.INewsActivity"
+            android:screenOrientation="portrait"
+            android:theme="@android:style/Theme.NoTitleBar" >
+        </activity>
+        <activity
+            android:name="com.haier.activity.BrowserActivity"
+            android:screenOrientation="portrait"
+            android:theme="@android:style/Theme.NoTitleBar" >
+        </activity>
+         <activity
+            android:name="com.haier.activity.SignActivity"
+            android:screenOrientation="portrait"
+            android:theme="@android:style/Theme.NoTitleBar" >
+        </activity>
+       
+        <activity
+            android:name="com.haier.activity.SearchActivity"
+            android:screenOrientation="portrait" 
+             >
+        </activity>
+   <activity
+            android:name="com.haier.activity.GloryActivity"
+            android:screenOrientation="portrait" >
+        </activity>
+         <activity
+            android:name="com.haier.activity.SetActivity"
+            android:screenOrientation="portrait" >
+        </activity>
+        <activity
+            android:name="com.haier.activity.RemindActivity"
+            android:screenOrientation="portrait" >
+        </activity>
+        <activity
+            android:name="com.haier.activity.InteractActivity"
+            android:screenOrientation="portrait" >
+        </activity>
+<activity
+            android:name="com.haier.activity.forum.AskAllActivity"
+            android:screenOrientation="portrait" >
+        </activity>
+        <activity
+            android:name="com.haier.activity.forum.AskExpertActivity"
+            android:screenOrientation="portrait" >
+        </activity>
+        <activity
+            android:name="com.haier.activity.forum.AskAllReplyActivity"
+            android:screenOrientation="portrait" >
+        </activity>
+        <activity
+            android:name="com.haier.activity.forum.AskExpertReplyActivity"
+            android:screenOrientation="portrait" >
+        </activity>    
+          <activity
+            android:name="com.haier.activity.forum.AskMeActivity"
+            android:screenOrientation="portrait" >
+        </activity>     
+          <activity
+            android:name="com.haier.activity.RnewsActivity"
+            android:screenOrientation="portrait" >
+        </activity>
+         <activity
+            android:name="com.haier.activity.RemindZjActivity"
+            android:screenOrientation="portrait" >
+        </activity>
+         <activity
+            android:name="com.haier.activity.RemindmeActivity"
+            android:screenOrientation="portrait" >
+        </activity>
+         <activity
+            android:name="com.haier.activity.RemindFsActivity"
+            android:screenOrientation="portrait" >
+        </activity>        <provider
+            android:name="com.haier.db.QuestionContentProvider"
+            android:authorities="com.haier.QuestionContentProvider" />
+        <provider
+            android:name="com.haier.ContentProvider.EquipmentContentProvider"
+            android:authorities="com.haier.ContentProvider.EquipmentContentProvider" />
+        <provider
+            android:name="com.haier.ContentProvider.UserInfoContentProvider"
+            android:authorities="com.haier.ContentProvider.UserInfoContentProvider" />
+        <provider
+            android:name="com.haier.ContentProvider.ScheduleInfosContentProvider"
+            android:authorities="com.haier.ContentProvider.ScheduleInfosContentProvider" />
+    </application>
+
+    <uses-sdk android:minSdkVersion="8" />
+
+</manifest>

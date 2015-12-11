@@ -1,0 +1,39 @@
+package com.haier.bean;
+
+import java.util.ArrayList;
+import java.util.List;
+
+import org.json.JSONArray;
+import org.json.JSONException;
+
+import com.haier.app.AppException;
+
+public class Users {
+	public final static String INEWS = "files";
+	private List<UserInfo> fileList = new ArrayList<UserInfo>();
+	public Users(){}
+	public Users(List<UserInfo> files) {
+		this.fileList = files;
+	}
+	
+	public List<UserInfo> getFileList() {
+		return fileList;
+	}
+
+	public void setFileList(List<UserInfo> fileList) {
+		this.fileList = fileList;
+	}
+	
+	public static Users parse(String jsonString) throws AppException {
+		Users files = new Users();
+		try {
+			JSONArray jsonFiles = new JSONArray(jsonString);
+			for (int i = 0; i < jsonFiles.length(); i++) {
+				files.getFileList().add(UserInfo.parse(jsonFiles.getString(i)));
+			}
+		} catch (JSONException e) {
+			throw AppException.json(e);
+		}
+		return files;
+	}
+}

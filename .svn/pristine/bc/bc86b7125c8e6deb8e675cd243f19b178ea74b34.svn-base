@@ -1,0 +1,34 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical" >
+<LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="65dp"
+        android:orientation="horizontal">
+    
+    <include layout="@layout/haier_top"/>
+</LinearLayout>
+       
+<FrameLayout
+    android:id="@+id/content"
+    android:layout_width="match_parent"
+    android:layout_height="0dp"
+    android:layout_weight="1" >
+    </FrameLayout>
+    <TextView 
+        android:id="@+id/text"
+        android:layout_width="fill_parent"
+        android:layout_height="25dp"
+        android:gravity="center_vertical"
+         android:background="@drawable/ic_game_dibu"
+            android:ellipsize="marquee"
+            android:focusable="true"
+            android:focusableInTouchMode="true"
+            android:marqueeRepeatLimit="marquee_forever"
+            android:scrollHorizontally="true"
+            android:singleLine="true"
+            android:text="张玲：寓教于乐，这种形式挺好！ @王鑫：洗衣机发展历程知识点满分通过，奥耶！@马悦：I am sorry，洗衣机发展历程知识点已经学了N次了，还没通过，哎..."
+            android:textColor="#ffffff"
+            android:textSize="16dip"/>
+</LinearLayout>

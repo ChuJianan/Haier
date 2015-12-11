@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical" >
+    <RelativeLayout 
+        android:layout_width="fill_parent"
+        android:layout_height="60.0dp"
+        android:background="@color/white"
+        >
+        <LinearLayout 
+            android:layout_width="40.0dp"
+            android:layout_height="40.0dp"
+            android:background="@drawable/ic_sanjiao"></LinearLayout>
+        <TextView 
+            android:id="@+id/number"
+            android:layout_width="wrap_content"
+            android:layout_height="15dp"
+            android:layout_marginLeft="3.0dp"
+            android:layout_marginTop="3.0dp"
+            android:text="10"
+            android:gravity="center"
+            android:textSize="12sp"
+            android:rotation="315"
+            android:textColor="@color/white"/>
+        <ImageView 
+            android:id="@+id/userimage"
+            android:layout_width="wrap_content"
+            android:layout_height="fill_parent"
+            android:layout_toRightOf="@id/number"
+            android:layout_marginLeft="10.0dp"
+            android:src="@drawable/rr"></ImageView>"
+         <TextView 
+            android:id="@+id/username1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="玩家姓名"
+            android:gravity="center_vertical"
+            android:textSize="16sp"
+            android:singleLine="true"
+            android:layout_toRightOf="@id/userimage"
+            android:layout_marginLeft="5.0dp"
+            android:layout_marginTop="5.0dp"
+            android:textColor="@color/black"/>
+         <TextView 
+            android:id="@+id/us"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="游戏积分 :  "
+            android:gravity="center"
+            android:textSize="13sp"
+            android:singleLine="true"
+            android:layout_toRightOf="@id/userimage"
+            android:layout_marginLeft="5.0dp"
+            android:layout_alignParentBottom="true"
+            android:layout_below="@id/username1"
+            android:textColor="@color/list_item_title_color"/>
+
+         <TextView
+             android:id="@+id/totalScore1"
+             android:layout_width="wrap_content"
+             android:layout_height="wrap_content"
+             android:layout_alignBaseline="@+id/us"
+             android:layout_alignBottom="@+id/us"
+             android:layout_toRightOf="@+id/us"
+             android:gravity="center"
+             android:singleLine="true"
+             android:text="89500000"
+             android:textColor="@color/list_item_title_color"
+             android:textSize="13sp" />
+
+    </RelativeLayout>
+</LinearLayout>

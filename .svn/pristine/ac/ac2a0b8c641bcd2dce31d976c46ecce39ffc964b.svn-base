@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical" >
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent" 
+        android:gravity="top|center"
+        android:padding="10dp">
+
+        <ImageView
+            android:id="@+id/nub2"
+            android:layout_width="120dp"
+            android:layout_height="120dp"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentTop="true"
+            android:src="@drawable/nub2" />
+
+        <ImageView
+            android:id="@+id/nub1"
+            android:layout_width="120dp"
+            android:layout_height="120dp"
+            android:layout_alignParentTop="true"
+            android:layout_toRightOf="@+id/nub2"
+            android:src="@drawable/nub1" />
+
+        <ImageView
+            android:id="@+id/nub3"
+            android:layout_width="120dp"
+            android:layout_height="120dp"
+            android:layout_alignParentLeft="true"
+            android:layout_below="@+id/nub2"
+            android:src="@drawable/nub3" />
+
+        <ImageView
+            android:id="@+id/nub4"
+            android:layout_width="120dp"
+            android:layout_height="120dp"
+            android:layout_alignLeft="@+id/nub1"
+            android:layout_alignTop="@+id/nub3"
+            android:src="@drawable/nub4" />
+
+        <Button
+            android:id="@+id/bgbtn"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignLeft="@+id/nub3"
+            android:layout_alignRight="@+id/nub4"
+            android:layout_below="@+id/nub3"
+            android:layout_marginTop="60dp"
+            android:background="@color/lightblue"
+            android:text="更多背景"
+            android:textColor="@color/white" />
+
+        <Button
+            android:id="@+id/mbgbtn"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignLeft="@+id/bgbtn"
+            android:layout_alignRight="@+id/bgbtn"
+            android:layout_below="@+id/bgbtn"
+            android:background="@color/lightblue"
+            android:layout_marginTop="10dp"
+            android:text="默认背景"
+            android:textColor="@color/white"/>
+
+    </RelativeLayout>
+
+</LinearLayout>

@@ -1,0 +1,49 @@
+package com.haier.activity.fragment;
+
+
+import com.haier.R;
+import com.haier.adapter.CarefulPagerAdapter;
+import com.haier.adapter.SelectGamePagerAdapter;
+
+import android.os.Bundle;
+import android.support.v4.app.Fragment;
+import android.support.v4.view.ViewPager;
+import android.view.LayoutInflater;
+import android.view.View;
+import android.view.ViewGroup;
+import android.widget.RadioGroup;
+
+public class CarefulFragment extends Fragment {
+	private ViewPager mGamePager;
+	private CarefulPagerAdapter mPagerAdapter;
+	private RadioGroup mRadioGroup;
+	@Override
+	public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
+		View settingLayout = inflater.inflate(R.layout.secectgame, container, false);
+		mGamePager = (ViewPager) settingLayout.findViewById(R.id.pager);
+		mRadioGroup = (RadioGroup) settingLayout.findViewById(R.id.radio_group);
+		return settingLayout;
+	}
+	@Override
+	public void onActivityCreated(Bundle savedInstanceState) {
+		super.onActivityCreated(savedInstanceState);
+		
+		mPagerAdapter = new CarefulPagerAdapter(getChildFragmentManager(), getActivity());
+		mGamePager.setAdapter(mPagerAdapter);
+		mRadioGroup.setOnCheckedChangeListener(new RadioGroup.OnCheckedChangeListener() {
+			@Override
+			public void onCheckedChanged(RadioGroup group, int checkedId) {
+				switch (checkedId) {
+				case R.id.radio_kasa:
+					mGamePager.setCurrentItem(0);
+					break;
+				case R.id.radio_tongshuai:
+					mGamePager.setCurrentItem(1);
+					break;
+				default:
+					break;
+				}
+			}
+		});
+	}
+}

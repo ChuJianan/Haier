@@ -1,0 +1,69 @@
+package com.haier.bean;
+
+import java.io.UnsupportedEncodingException;
+import java.net.URLEncoder;
+import java.util.Map;
+/**
+ * �ӿ�URLʵ����
+ * @author SYZ
+ * @version 1.0
+ */
+public class URLs {
+	public final static String UTF_8 = "UTF-8";
+	public static final String HOST = "http://42.96.134.201:8080/gamelearning/";
+	public static String API_URL = "http://42.96.134.201:8080/gamelearning/clientLogin/login.action?";//登录ڵ�ַ
+public static final String URL_SEARCH_LIST = HOST + "clientKnowledgeDB/getKnowledgeDBs";  // 查询资料列表
+	public static final String URL_GET_EXPERTS = HOST + "clientAskExpert/getExperts";  // 得到问题分类列表
+	public static final String URL_REPLY_ASKALL = HOST + "clientAskAll/getAskAll";  // 查询单个问大家帖子
+	public static final String URL_REPLY_ASKEXPERT = HOST + "clientAskExpert/getAskExpert";  // 查询单个问专家帖子
+	public static final String ASKEXPERTS_URL=HOST+"clientAskExpert/getAskExperts?";	
+	public static final String  RANK_URL =HOST+"clientHonor/friendRanking.action?";			//好友排行
+	public static final String  RULE_URL =HOST+"clientGame/getGameRule.action?";//游戏规则
+	public static final String  EQUIP_URL =HOST+"clientGame/getEquipments.action?";//我的装备
+	public static final String  FRIEND_URL =HOST+"clientFriend/getUsers?";	
+	public static final String GETQS_URL=HOST+"clientLogin/loginRegister.action?";//提交问题和新密码
+	public static final String SIGN_URL=HOST+"signIn/signIn.action?";//签到
+	public static final String ASKME_URL=HOST+"clientAskSelf/getAskSelfPublish?";
+	public static final String NEWSCONTENT_URL=HOST+"clientNews/getNews?";//获取新闻具体内容
+	public static final String ASK_TEACHER =HOST+"clientLogin/loginOut.action?";//推出登录
+	public static final String GET_STRING =HOST+"findPassword/modifyPassword.action?";//设置新密码
+public static final String FSLIST_URL=HOST+"clientFriend/getFriends?";//需要验证的好友
+public static final String SEND_URL =HOST+"clientAskAll/addAskAll?";			//发表学习笔记
+public static final String SEND_EXOERTSURL =HOST+"clientAskExpert/getExperts?";			//发表问专家
+public static final String ASK_URL=HOST+"clientAskAll/getAskAlls?";
+public static final String FS_URL=HOST+"clientFriend/agreeOrNot?";//验证好友
+public static final String NEWS_URL =HOST+"clientNews/getNewss.action?";			//获取新闻
+public static final String GLORY_URL=HOST+"clientHonor/areaRanking.action?";//微荣誉
+public static final String REGISTER_URL=HOST+"findPassword/getSecretQuestions.action?";//密保问题
+public static final String ADDF_URL=HOST+"clientFriend/addFriend?";
+public static final String TIMETABLE = HOST + "clientGame/getQuestions.action?";		//获取问题
+public static final String ANWER = HOST + "clientAskAll/addReply?";		//回复问大家
+public static final String EANWER = HOST + "clientAskExpert/addReply?";		//回复问大家
+
+public static final String PWSS_TEST = HOST + "findPassword/ValidationUserInfo.action?";		//yanzheng
+	/**
+	 * URL�Ӳ���
+	 * @param p_url
+	 * @param params
+	 * @return
+	 */
+	public static String makeURL(String p_url, Map<String, Object> params) {
+		StringBuilder url = new StringBuilder(p_url);
+		if(url.indexOf("?")<0)
+			url.append('?');
+		for(String name : params.keySet()){
+			url.append('&');
+			url.append(name);
+			url.append('=');
+			try {
+				// url.append(String.valueOf(params.get(name)));
+				// URLEncoder����
+				url.append(URLEncoder.encode(String.valueOf(params.get(name)), UTF_8));
+			} catch (UnsupportedEncodingException e) {
+				e.printStackTrace();
+			}
+		}
+		
+		return url.toString().replace("?&", "?");
+	}
+}

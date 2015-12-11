@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="horizontal" 
+    android:background="@drawable/sellknowledge">
+    <RelativeLayout 
+        android:layout_width="match_parent"
+        android:layout_height="fill_parent"
+        android:layout_weight="1">
+
+            <TextView
+                android:id="@+id/knowledge2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentRight="true"
+                android:layout_marginRight="20.0dp"
+                android:background="@drawable/ic_knowledge_icon11"
+                android:gravity="center"
+                android:padding="15.0dp"
+                android:textColor="#000000" />
+
+
+            <TextView
+                android:id="@+id/knowledge1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                  android:layout_marginTop="120.0dp"
+                  android:layout_centerHorizontal="true"
+                android:background="@drawable/ic_knowledge_icon11"
+                android:gravity="center"
+                android:padding="15.0dp"
+                android:textColor="#000000" />
+
+    </RelativeLayout>
+     <RelativeLayout 
+        android:layout_width="match_parent"
+        android:layout_height="fill_parent"
+        android:layout_weight="1">
+        
+
+            <TextView
+                android:id="@+id/knowledge3"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentRight="true"
+                android:layout_marginRight="10.0dp"
+                android:background="@drawable/ic_knowledge_icon11"
+                android:gravity="center"
+                android:padding="15.0dp"
+                android:textColor="#000000" />
+
+           <TextView
+                android:id="@+id/knowledge6"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="150dp"
+                android:layout_centerHorizontal="true"
+                android:background="@drawable/ic_knowledge_icon11"
+                android:gravity="center"
+                android:padding="15.0dp"
+                android:textColor="#000000" />
+         
+     </RelativeLayout>
+      <RelativeLayout 
+        android:layout_width="match_parent"
+        android:layout_height="fill_parent"
+        android:layout_weight="1">
+          <TextView
+                android:id="@+id/knowledge4"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentRight="true"
+                android:layout_marginRight="10.0dp"
+                android:background="@drawable/ic_knowledge_icon11"
+                android:gravity="center"
+                android:padding="15.0dp"
+                android:textColor="#000000" />
+          
+          <TextView
+                android:id="@+id/knowledge5"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="120dp"
+                android:layout_alignParentRight="true"
+                android:layout_marginRight="10.0dp"
+                android:background="@drawable/ic_knowledge_icon11"
+                android:gravity="center"
+                android:padding="15.0dp"
+                android:textColor="#000000" />
+      </RelativeLayout>
+
+</LinearLayout>

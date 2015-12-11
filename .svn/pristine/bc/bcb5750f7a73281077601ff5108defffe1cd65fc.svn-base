@@ -1,0 +1,61 @@
+package com.haier.adapter;
+
+import java.util.Collections;
+import java.util.List;
+
+import com.haier.R;
+import com.haier.bean.ReplyInfo;
+import android.content.Context;
+import android.view.LayoutInflater;
+import android.view.View;
+import android.view.ViewGroup;
+import android.widget.BaseAdapter;
+import android.widget.TextView;
+
+public class ListViewForumReplyAdapter extends BaseAdapter {
+	private LayoutInflater mContainer;
+	private List<ReplyInfo> data = Collections.emptyList();
+	static class ViewHolder {
+		public TextView name;
+		public TextView content;
+		public TextView time;
+	}
+	public ListViewForumReplyAdapter(Context context, List<ReplyInfo> data) {
+		this.mContainer = LayoutInflater.from(context);
+		this.data = data;
+	}
+	@Override
+	public View getView(int position, View convertView, ViewGroup parent) {
+		ViewHolder holder;
+		if (convertView == null) {
+			convertView = mContainer.inflate(R.layout.listitem_forum_reply, null);
+			holder = new ViewHolder();
+			holder.name = (TextView) convertView.findViewById(R.id.name);
+			holder.content = (TextView) convertView.findViewById(R.id.content);
+			holder.time = (TextView) convertView.findViewById(R.id.time);
+			convertView.setTag(holder);
+		} else {
+			holder = (ViewHolder) convertView.getTag();
+		}
+		ReplyInfo info = data.get(position);
+		holder.name.setText(info.getUserInfo().getUserName());
+		holder.content.setText(info.getReply());
+		holder.time.setText(info.getReplyDate());
+		return convertView;
+	}
+	
+	@Override
+	public int getCount() {
+		return data.size();
+	}
+
+	@Override
+	public Object getItem(int position) {
+		return data.get(position);
+	}
+
+	@Override
+	public long getItemId(int position) {
+		return 0;
+	}
+}

@@ -1,0 +1,301 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:id="@+id/mainRl"
+    android:background="@drawable/ic_mainbg2"
+    tools:context=".MainActivity" >
+  
+    <LinearLayout 
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:orientation="vertical" 
+        android:id="@+id/linearLayout1">
+<RelativeLayout 
+    android:id="@+id/rela1"
+    android:layout_width="fill_parent"
+    android:layout_height="49dp"
+    android:background="@drawable/ic_main_daohang"
+    android:gravity="center_vertical">
+     <ImageView
+        android:id="@+id/left_button"
+        android:layout_width="56dp"
+        android:layout_height="49dp"
+        android:paddingLeft="18.0dp"
+        android:paddingRight="18.0dp"
+        android:paddingTop="16.0dp"
+        android:paddingBottom="16.0dp"
+        android:layout_alignParentLeft="true"
+        android:src="@drawable/ic_main_pifu"
+        android:background="@drawable/bg_btn_back"
+        android:scaleType="fitXY"
+         />
+
+    <TextView
+        android:id="@+id/main_title"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginLeft="28.0dp"
+        android:layout_toLeftOf="@+id/right_button"
+        android:layout_toRightOf="@+id/left_button"
+        android:gravity="center"
+        android:text="海尔云瑞微学习"
+        android:textColor="#ffffff"
+        android:textSize="18sp" />
+
+    <Button
+        android:id="@+id/right_button"
+        android:layout_width="65dp"
+        android:layout_height="48dp"
+        android:background="@drawable/bg_btn_back"
+        android:text="退出登录"
+        android:textSize="14sp"
+         android:textColor="#ffffff"
+        android:layout_alignParentRight="true"
+        android:scaleType="centerInside" />
+    <!-- <TextView 
+        android:layout_below="@id/left_button"
+        android:layout_width="fill_parent"
+        android:layout_height="1.0dp"
+        android:background="#005aaa"/> -->
+    
+    
+</RelativeLayout>
+<RelativeLayout 
+    android:id="@+id/rela2"
+    android:layout_width="fill_parent"
+    android:layout_height="wrap_content"
+    android:layout_below="@id/rela1"
+    android:layout_marginLeft="20dp"
+    android:layout_marginRight="20dp"
+    android:layout_marginTop="20dp"
+    android:background="#00000000"
+    >
+    <LinearLayout 
+        android:id="@+id/linear1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:orientation="vertical"
+        >
+        <ImageButton 
+            android:id="@+id/ima_btn1"
+            android:layout_width="70dp"
+            android:layout_height="70dp"
+            android:background="@drawable/selector8"/>
+        <TextView
+            android:layout_width="70dp"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+             android:textColor="@color/list_item_title_color"
+            android:text="微游戏"
+            />
+    </LinearLayout>
+    <RelativeLayout 
+        android:id="@+id/linear2"
+        android:layout_width="70dp"
+        android:layout_height="wrap_content"
+        android:layout_centerInParent="true"
+        android:orientation="vertical"
+        >
+
+        <ImageButton 
+            android:id="@+id/ima_btn2"
+            android:layout_width="70dp"
+            android:layout_height="70dp"
+            android:background="@drawable/selector9"/>
+
+        <TextView
+            android:layout_width="70dp"
+            android:layout_height="wrap_content"
+            android:layout_alignParentLeft="true"
+            android:layout_below="@+id/ima_btn2"
+            android:gravity="center"
+             android:textColor="@color/list_item_title_color"
+            android:text="微好友" />
+
+        <RelativeLayout
+            android:id="@+id/rels"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" 
+            android:layout_alignParentRight="true"
+            android:layout_alignParentTop="true">
+
+            <ImageView
+                android:id="@+id/imageView4"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/ic_remind_group" />
+
+            <TextView
+                android:id="@+id/rfsize"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerHorizontal="true"
+                android:layout_centerVertical="true"
+                android:text="0"
+                android:textColor="@color/white"
+                android:textSize="16dip" />
+        </RelativeLayout>
+
+    </RelativeLayout>
+    <RelativeLayout 
+        android:id="@+id/linear3"
+        android:layout_width="70dp"
+        android:layout_height="wrap_content"
+        android:layout_alignParentRight="true"
+        android:orientation="vertical"
+        >
+        <ImageButton 
+            android:id="@+id/ima_btn3"
+            android:layout_width="70dp"
+            android:layout_height="70dp"
+            android:background="@drawable/selector10"/>
+
+        <TextView
+            android:layout_width="70dp"
+            android:layout_height="wrap_content"
+            android:layout_alignParentLeft="true"
+            android:layout_below="@+id/ima_btn3"
+            android:gravity="center"
+             android:textColor="@color/list_item_title_color"
+            android:text="微互动" />
+ <RelativeLayout
+            android:id="@+id/rels1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" 
+            android:layout_alignParentRight="true"
+            android:layout_alignParentTop="true">
+
+            <ImageView
+                android:id="@+id/imageView42"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/ic_remind_group" />
+
+            <TextView
+                android:id="@+id/rhdsize"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerHorizontal="true"
+                android:layout_centerVertical="true"
+                android:text="0"
+                android:textColor="@color/white"
+                android:textSize="16dip" />
+        </RelativeLayout>
+    </RelativeLayout>
+</RelativeLayout>
+
+ <RelativeLayout
+     android:id="@+id/rela3"
+     android:layout_width="fill_parent"
+     android:layout_height="wrap_content"
+     android:layout_below="@id/rela2"
+     android:layout_marginLeft="20dp"
+     android:layout_marginRight="20dp"
+     android:layout_marginTop="10dp"
+     android:background="#00000000" >
+
+     <LinearLayout
+         android:id="@+id/linear4"
+         android:layout_width="wrap_content"
+         android:layout_height="wrap_content"
+         android:layout_alignParentLeft="true"
+         android:orientation="vertical" >
+
+         <ImageButton
+             android:id="@+id/ima_btn4"
+             android:layout_width="70dp"
+             android:layout_height="70dp"
+             android:background="@drawable/selector13" />
+
+         <TextView
+             android:layout_width="70dp"
+             android:layout_height="wrap_content"
+             android:gravity="center"
+              android:textColor="@color/list_item_title_color"
+             android:text="微签到" />
+     </LinearLayout>
+
+     <RelativeLayout
+         android:id="@+id/linear5"
+         android:layout_width="70dp"
+         android:layout_height="wrap_content"
+         android:layout_centerInParent="true"
+         android:orientation="vertical" >
+
+         <ImageButton
+             android:id="@+id/ima_btn5"
+             android:layout_width="70dp"
+             android:layout_height="70dp"
+             android:background="@drawable/selector11" />
+
+         <TextView
+             android:layout_width="70dp"
+             android:layout_height="wrap_content"
+             android:layout_alignParentLeft="true"
+             android:layout_below="@+id/ima_btn5"
+             android:gravity="center"
+              android:textColor="@color/list_item_title_color"
+             android:text="微讯息" />
+<RelativeLayout
+            android:id="@+id/rels2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" 
+            android:layout_alignParentRight="true"
+            android:layout_alignParentTop="true">
+
+            <ImageView
+                android:id="@+id/imageView43"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/ic_remind_group" />
+
+            <TextView
+                android:id="@+id/rnewsize"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerHorizontal="true"
+                android:layout_centerVertical="true"
+                android:text="0"
+                android:textColor="@color/white"
+                android:textSize="16dip" />
+        </RelativeLayout>
+     </RelativeLayout>
+
+     <LinearLayout
+         android:id="@+id/linear6"
+         android:layout_width="wrap_content"
+         android:layout_height="wrap_content"
+         android:layout_alignParentRight="true"
+         android:orientation="vertical" >
+
+         <ImageButton
+             android:id="@+id/ima_btn6"
+             android:layout_width="70dp"
+             android:layout_height="70dp"
+             android:background="@drawable/selector12" />
+
+         <TextView
+             android:layout_width="70dp"
+             android:layout_height="wrap_content"
+             android:gravity="center"
+              android:textColor="@color/list_item_title_color"
+             android:text="微荣誉" />
+     </LinearLayout>
+ </RelativeLayout>
+</LinearLayout>
+  <!--   <RelativeLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentLeft="true" >
+        <include
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentTop="true"
+            layout="@layout/include_bottom_bar" />
+    </RelativeLayout> -->
+</RelativeLayout>

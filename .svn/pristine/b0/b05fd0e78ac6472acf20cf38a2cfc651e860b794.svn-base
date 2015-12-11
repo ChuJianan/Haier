@@ -1,0 +1,98 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/backcolor"
+    android:orientation="vertical" 
+     >
+
+    <RelativeLayout
+        android:id="@+id/rela1"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content" >
+
+    </RelativeLayout>
+    <!--
+         <Button 
+        android:id="@+id/buttongamelist"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:text="获取游戏方式"
+        />
+    -->
+
+    
+
+    <RelativeLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentRight="true"
+        android:layout_centerVertical="true"
+       >
+
+        <ImageView
+            android:id="@+id/sheji"
+            android:layout_width="80dp"
+            android:layout_height="80dp"
+            android:layout_alignParentTop="true"
+            android:layout_centerHorizontal="true"
+            android:src="@drawable/ic" />
+
+        <ImageView
+            android:id="@+id/xiaochu"
+            android:layout_width="80dp"
+            android:layout_height="80dp"
+            android:layout_alignParentTop="true"
+            android:layout_marginRight="60dp"
+            android:layout_toLeftOf="@+id/sheji"
+            android:src="@drawable/icon3" />
+
+        <ImageView
+            android:id="@+id/feiche"
+            android:layout_width="80dp"
+            android:layout_height="80dp"
+            android:layout_alignParentTop="true"
+            android:layout_marginLeft="60dp"
+            android:layout_toRightOf="@+id/sheji"
+            android:src="@drawable/icon1" />
+
+        <TextView
+            android:id="@+id/textView1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignLeft="@+id/xiaochu"
+            android:layout_alignRight="@+id/xiaochu"
+            android:layout_below="@+id/xiaochu"
+            android:gravity="center"
+            android:textColor="#000000"
+            android:textSize="20dp"
+            android:text="爱消除" />
+
+        <TextView
+            android:id="@+id/textView2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignLeft="@+id/sheji"
+            android:layout_alignTop="@+id/textView1"
+            android:layout_toLeftOf="@+id/imageView2"
+             android:gravity="center"
+            android:textColor="#000000"
+            android:textSize="20dp"
+            android:text="百发百中"/>
+
+        <TextView
+            android:id="@+id/textView3"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignLeft="@+id/feiche"
+            android:layout_alignRight="@+id/feiche"
+            android:layout_alignTop="@+id/textView2"
+            android:gravity="center"
+            android:textColor="#000000"
+            android:textSize="20dp"
+            android:text="极速飞车"  />
+
+    </RelativeLayout>
+
+</RelativeLayout>

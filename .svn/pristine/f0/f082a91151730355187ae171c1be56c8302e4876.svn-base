@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/haier_listitem_bg"
+    android:orientation="vertical" >
+
+    <com.haier.widgets.PullToRefreshListView
+        android:id="@+id/noticeslistview"
+        style="@style/widget_listview"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_gravity="center|left" />
+
+</LinearLayout>

@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical" 
+    android:background="@drawable/ic_game_di">
+    <TextView 
+        android:id="@+id/textabout"
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:layout_marginLeft="20.0dp"
+        android:layout_marginRight="20.0dp"
+        android:layout_marginTop="20.0dp"
+        android:layout_marginBottom="20.0dp"
+        android:textColor="#ffffff"
+        android:text="通关规则"/>
+    
+
+</LinearLayout>

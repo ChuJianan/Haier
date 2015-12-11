@@ -1,0 +1,97 @@
+package com.haier.adapter;
+
+import java.util.List;
+
+import android.content.Context;
+import android.view.LayoutInflater;
+import android.view.View;
+import android.view.View.OnClickListener;
+import android.view.ViewGroup;
+import android.widget.BaseAdapter;
+import android.widget.Button;
+import android.widget.TextView;
+
+import com.haier.R;
+import com.haier.app.AppClient;
+import com.haier.bean.Sscion;
+import com.haier.bean.URLs;
+import com.haier.bean.UserInfo;
+import com.haier.utils.JsonUtils;
+import com.haier.utils.UIHelper;
+
+public class RemindFsListAdapter extends BaseAdapter{
+
+	Context context;
+	List<UserInfo> list;
+	private LayoutInflater listContainer; // 视图容器
+	 static final class ViewHolder { //自定义控件集合  
+//		public ImageView icon;
+		public TextView title;
+//		public TextView size;
+		public TextView author;
+		public Button btn;
+	}
+	public RemindFsListAdapter(Context context,List<UserInfo> list){
+		this.listContainer = LayoutInflater.from(context);
+		this.context=context;
+		this.list=list;
+	}
+	public void setMessages(List<UserInfo> data) {
+		if (data != null)
+			list = data;
+	}
+	@Override
+	public View getView(int arg0, View convertView, ViewGroup arg2) {
+		// TODO Auto-generated method stub
+		  ViewHolder holder = null;
+		if (convertView == null) {
+			convertView = listContainer.inflate(R.layout.list_fs_item, null);
+			holder = new ViewHolder();
+			holder.title=(TextView)convertView.findViewById(R.id.textView1);
+			holder.btn=(Button)convertView.findViewById(R.id.button1);
+			holder.author=(TextView)convertView.findViewById(R.id.textView2);
+			convertView.setTag(holder);
+		} else {
+			holder = (ViewHolder)convertView.getTag();
+		}
+		final UserInfo iNews=list.get(arg0);
+		holder.title.setText(iNews.getUserName());
+		holder.btn.setOnClickListener(new OnClickListener() {
+			@Override
+			public void onClick(View arg0) {
+				// TODO Auto-generated method stub
+				String flag=AppClient.httpgetFS(URLs.FS_URL+"sessionId="+Sscion.getSsid()+"&friendId="+
+				iNews.getId()+"&agreeFlag=1");
+				if (flag.equals("6")) {
+					isclick=true;
+					UIHelper.ToastMessage(context, JsonUtils.describe);
+				}else {
+					UIHelper.ToastMessage(context, JsonUtils.describe);
+				}
+			}
+		});
+		if (isclick) {
+			holder.btn.setVisibility(View.GONE);
+			holder.author.setVisibility(View.VISIBLE);
+		}
+		return convertView;
+	}
+	boolean isclick=false;
+	@Override
+	public int getCount() {
+		// TODO Auto-generated method stub
+		return 0;
+	}
+
+	@Override
+	public Object getItem(int arg0) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public long getItemId(int arg0) {
+		// TODO Auto-generated method stub
+		return 0;
+	}
+}

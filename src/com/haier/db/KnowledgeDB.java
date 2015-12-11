@@ -1,0 +1,133 @@
+package com.haier.db;
+
+import android.content.ContentValues;
+import android.content.Context;
+import android.database.Cursor;
+import android.database.sqlite.SQLiteDatabase;
+
+import com.haier.bean.Knowledges;
+
+public class KnowledgeDB {
+
+	   // ����
+		public final static String TABLE_NAME = "knowledges";
+		public final static String ID = "id";
+		public final static String TITLE = "parentId";
+		public final static String CONTENT = "name";
+		private DBHelper helper;
+		public KnowledgeDB(Context context) {
+			helper = new DBHelper(context);
+		}
+		//�鿴����
+		public Cursor select(int id) {
+			SQLiteDatabase db = helper.getReadableDatabase();
+			String selection = ID + " = ?";
+			String[] selectionArgs = { String.valueOf(id) };
+			Cursor cursor = db
+					.query(TABLE_NAME, null, selection, selectionArgs, null, null, null);
+			return cursor;
+		}
+		public String select(String parentId){
+			SQLiteDatabase db = helper.getReadableDatabase();
+			String selection = TITLE + " = ?";
+			String[] selectionArgs = { String.valueOf(parentId) };
+			Cursor cursor = db
+					.query(TABLE_NAME, null, selection, selectionArgs, null, null, null);
+			
+			return cursor.getString(0);
+		}
+		public String[] select() {
+			SQLiteDatabase db = helper.getReadableDatabase();
+			String[] a=new String[5];
+			String  b="";
+			int i=0;
+			String name =null;
+			Cursor cursor = db.rawQuery("select * from knowledges", null);
+			while (cursor.moveToNext()){
+				b=cursor.getString(1);
+				if(b.equals("3")){
+			     a[i]=cursor.getString(2);//��ȡ��yi�е�ֵ
+			     i++;
+				}
+				
+			}
+			return a;
+		}
+		public String[] select1() {
+			SQLiteDatabase db = helper.getReadableDatabase();
+			String[] a=new String[3];
+			String  b="";
+			int i=0;
+			Cursor cursor = db.rawQuery("select * from knowledges", null);
+			while (cursor.moveToNext()){
+				b=cursor.getString(1);
+				if(b.equals("1")){
+			     a[i]=cursor.getString(2);//��ȡ��yi�е�ֵ
+			     i++;
+				}
+			}
+			return a;
+		}
+		public String[] select2() {
+			SQLiteDatabase db = helper.getReadableDatabase();
+			String[] a=new String[7];
+			String  b="";
+			int i=0;
+			Cursor cursor = db.rawQuery("select * from knowledges", null);
+			while (cursor.moveToNext()){
+				b=cursor.getString(1);
+				if(b.equals("4")){
+			     a[i]=cursor.getString(2);//��ȡ��yi�е�ֵ
+			     i++;
+				}
+			}
+			return a;
+		}
+		public String[] select3() {
+			SQLiteDatabase db = helper.getReadableDatabase();
+			String[] a=new String[6];
+			String  b="";
+			int i=0;
+			Cursor cursor = db.rawQuery("select * from knowledges", null);
+			while (cursor.moveToNext()){
+				b=cursor.getString(1);
+				if(b.equals("5")){
+			     a[i]=cursor.getString(2);
+			     i++;
+				}
+			}
+			return a;
+		}
+		public String select4(String name) {
+			SQLiteDatabase db = helper.getReadableDatabase();
+			String  b="";
+			String  ID="";
+			Cursor cursor = db.rawQuery("select * from knowledges", null);
+			while (cursor.moveToNext()){
+				b=cursor.getString(2);
+				if(b.equals(name)){
+					ID=cursor.getString(0);//��ȡ��yi�е�ֵ
+				}
+			}
+			return ID;
+		}
+		//��Ӳ���
+		public void addKnowledge(Knowledges entity)
+		{
+				SQLiteDatabase db = helper.getWritableDatabase();
+				/* ContentValues */
+				ContentValues cv = new ContentValues();
+				cv.put(ID, entity.getId());
+				cv.put(TITLE, entity.getParentId());
+				cv.put(CONTENT, entity.getName());
+				long row = db.insert(TABLE_NAME, null, cv);
+				
+		}
+		//ɾ�����
+		public void delete(int id) {
+			SQLiteDatabase db = helper.getWritableDatabase();
+			String where = ID + " = ?";
+			String[] whereValue = { Integer.toString(id) };
+			db.delete(TABLE_NAME, where, whereValue);
+		}
+}

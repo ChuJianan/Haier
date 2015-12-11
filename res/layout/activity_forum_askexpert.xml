@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical" >
+    <include layout="@layout/include_header_forum" />
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/haier_listitem_bg"
+        android:orientation="vertical" >
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:padding="15dp" >
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical" >
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:drawableLeft="@drawable/border_title"
+                    android:gravity="center_vertical"
+                    android:text="标题"
+                    android:textSize="18sp" />
+
+                <EditText
+                    android:id="@+id/ask_title"
+                    android:layout_width="match_parent"
+                    android:layout_height="35.0dp"
+                    android:layout_marginTop="5.0dp"
+                    android:text="标题"
+                    android:background="@drawable/shapeedit"
+                    android:textSize="14sp" />
+            </LinearLayout>
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:layout_marginTop="5.0dp" >
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:drawableLeft="@drawable/border_title"
+                    android:gravity="center_vertical"
+                    android:text="详细描述"
+                    android:textSize="18sp" />
+ <View
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    android:layout_marginBottom="5dp"
+                    android:layout_marginTop="5dp"
+                    android:background="#CCCCCC" />
+                <EditText
+                    android:id="@+id/ask_content"
+                    android:layout_width="match_parent"
+                    android:layout_height="150.0dp"
+                    android:gravity="left|top"
+                    android:inputType="textMultiLine"
+                    android:background="@drawable/shapeedit"
+                    android:layout_marginTop="5.0dp"
+                    android:minLines="6"
+                    android:text="内容"
+                    android:textSize="14sp" />
+            </LinearLayout>
+            <Spinner
+                android:id="@+id/spinner1"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" >
+            </Spinner>
+
+            <Spinner
+                android:id="@+id/spinner2"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" >
+            </Spinner>
+        </LinearLayout>
+    </ScrollView>
+
+</LinearLayout>

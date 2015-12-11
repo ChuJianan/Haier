@@ -1,0 +1,105 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical" >
+
+    <include
+        android:id="@+id/include1"
+        android:layout_width="wrap_content"
+        layout="@layout/top" />
+
+    <RelativeLayout
+        android:id="@+id/tab"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/include1"
+        android:layout_marginBottom="35.0dp"
+        android:background="#ffffff" >
+
+        <TabHost
+            android:id="@+id/tabhost"
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent" >
+
+            <RelativeLayout
+                android:layout_width="fill_parent"
+                android:layout_height="fill_parent" >
+
+                <FrameLayout
+                    android:id="@android:id/tabcontent"
+                    android:layout_width="fill_parent"
+                    android:layout_height="fill_parent"
+                    android:layout_marginBottom="20.0dp"
+                    android:layout_marginLeft="140.0dp"
+                    android:layout_marginRight="20.0dp"
+                    android:layout_marginTop="10.0dp" >
+
+                    <android.support.v4.view.ViewPager
+                        android:id="@+id/pager"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent" >
+                    </android.support.v4.view.ViewPager>
+                </FrameLayout>
+
+                <TabWidget
+                    android:id="@android:id/tabs"
+                    android:layout_width="wrap_content"
+                    android:layout_height="fill_parent"
+                    android:visibility="gone" />
+
+                <RadioGroup
+                    android:id="@+id/radio_group"
+                    android:layout_width="100dip"
+                    android:layout_height="100dip"
+                    android:layout_marginLeft="40.0dp"
+                    android:layout_marginTop="10.0dp"
+                    android:background="#ffffff"
+                    android:gravity="center_vertical"
+                    android:orientation="vertical" >
+
+                    <RadioButton
+                        android:id="@+id/radio_kasa"
+                        style="@style/tab_style"
+                        android:layout_height="50dp"
+                        android:background="@drawable/selector2"
+                        android:checked="true"
+                        android:textColor="#ffffff" />
+
+                    <RadioButton
+                        android:id="@+id/radio_tongshuai"
+                        style="@style/tab_style"
+                        android:layout_height="50dp"
+                        android:background="@drawable/selector3"
+                        android:textColor="#ffffff" />
+                </RadioGroup>
+            </RelativeLayout>
+        </TabHost>
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:id="@+id/bott"
+        android:layout_width="fill_parent"
+        android:layout_height="35dp"
+        android:layout_alignParentBottom="true"
+        android:background="@drawable/ic_game_dibu" >
+
+        <TextView
+            android:id="@+id/indexgallerytv"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:ellipsize="marquee"
+            android:focusable="true"
+            android:focusableInTouchMode="true"
+            android:marqueeRepeatLimit="marquee_forever"
+            android:paddingLeft="20dip"
+            android:paddingRight="20dip"
+            android:scrollHorizontally="true"
+            android:singleLine="true"
+            android:text="张玲：寓教于乐，这种形式挺好！ @王鑫：洗衣机发展历程知识点满分通过，奥耶！@马悦：I am sorry，洗衣机发展历程知识点已经学了N次了，还没通过，哎..."
+            android:textColor="#ffffff"
+            android:textSize="16dip" />
+    </RelativeLayout>
+
+</RelativeLayout>

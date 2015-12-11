@@ -1,0 +1,213 @@
+package com.haier.activity.forum;
+
+import java.text.DateFormat;
+import java.text.SimpleDateFormat;
+import java.util.ArrayList;
+import java.util.Collections;
+import java.util.Date;
+import java.util.List;
+
+import android.app.ProgressDialog;
+import android.os.Bundle;
+import android.view.View;
+import android.view.View.OnClickListener;
+import android.webkit.WebView;
+import android.widget.EditText;
+import android.widget.ListView;
+import android.widget.TextView;
+
+import com.google.gson.JsonSyntaxException;
+import com.haier.R;
+import com.haier.activity.BaseActivity;
+import com.haier.adapter.ListViewForumReplyAdapter;
+import com.haier.app.AppException;
+import com.haier.bean.AskallInfos;
+import com.haier.bean.ReplyInfo;
+import com.haier.bean.Result;
+import com.haier.bean.Sscion;
+import com.haier.bean.URLs;
+import com.haier.bean.UserInfo;
+import com.haier.db.UserDB;
+import com.haier.utils.JsonUtils;
+import com.haier.utils.UIHelper;
+import com.lidroid.xutils.HttpUtils;
+import com.lidroid.xutils.ViewUtils;
+import com.lidroid.xutils.exception.HttpException;
+import com.lidroid.xutils.http.RequestParams;
+import com.lidroid.xutils.http.ResponseInfo;
+import com.lidroid.xutils.http.callback.RequestCallBack;
+import com.lidroid.xutils.http.client.HttpRequest.HttpMethod;
+import com.lidroid.xutils.view.annotation.ViewInject;
+import com.lidroid.xutils.view.annotation.event.OnClick;
+
+public class AskExpertReplyActivity extends BaseActivity implements OnClickListener{
+	@ViewInject(R.id.webview)
+	private WebView mWebView;
+	@ViewInject(R.id.listview)
+	private ListView mReplysView;
+	@ViewInject(R.id.editan)
+	private EditText editText;
+	@ViewInject(R.id.title1)
+	private TextView title;
+	private ListViewForumReplyAdapter mReplyAdapter;
+	private ProgressDialog mLoadingDialog1;
+	private ProgressDialog mLoadingDialog;
+	private int mAskInfosId;
+	private String replyContents;
+	UserDB userDB=new UserDB(this);
+	public List<AskallInfos> askAllInfos = Collections.emptyList();			// 查询单个问大家帖子
+	@Override
+	public void onCreate(Bundle savedInstanceState) {
+		super.onCreate(savedInstanceState);
+		setContentView(R.layout.activity_forum_reply_askall);
+		ViewUtils.inject(this);
+		
+		initView();
+		initData();
+	}
+	
+	private void initView() {
+		mLoadingDialog = new ProgressDialog(this);
+		mLoadingDialog.setProgressStyle(ProgressDialog.STYLE_SPINNER);
+		mLoadingDialog.setTitle("提示");
+		mLoadingDialog.setMessage("正在加载……");
+		mLoadingDialog.setCancelable(false);
+	}
+	private void initView1() {
+		mLoadingDialog1 = new ProgressDialog(this);
+		mLoadingDialog1.setProgressStyle(ProgressDialog.STYLE_SPINNER);
+		mLoadingDialog1.setTitle("提示");
+		mLoadingDialog1.setMessage("正在发送……");
+		mLoadingDialog1.setCancelable(false);
+	}
+	private void initData() {
+		mAskInfosId = getIntent().getIntExtra("id", 0);
+		loadReplys();
+	}
+	
+	private void loadReplys() {
+		HttpUtils http = new HttpUtils();
+		RequestParams params = new RequestParams();
+		params.addQueryStringParameter("sessionId", Sscion.getSsid());
+		params.addQueryStringParameter("askExpertId", String.valueOf(mAskInfosId));
+		params.addQueryStringParameter("page", "1");
+		http.send(HttpMethod.GET, URLs.URL_REPLY_ASKEXPERT, params, new RequestCallBack<String>() {
+			@Override
+			public void onSuccess(ResponseInfo<String> responseInfo) {
+				try {
+					mLoadingDialog.dismiss();
+					Result result = JsonUtils.fromArrayJson(responseInfo.result, Result.class);
+					if (!result.OK()) {
+						throw AppException.custom(result.message());
+					} else if (result.askAllInfos.size() > 0) {
+						AskallInfos info = result.askAllInfos.get(0);
+						askAllInfos.removeAll(result.askAllInfos);
+						askAllInfos=result.askAllInfos;
+						setTitle("微互动");
+						title.setText(info.getTitle());
+						mWebView.loadDataWithBaseURL(URLs.HOST, info.getContents(), "text/html", "UTF-8", null);
+						if (info.getAskAllReplyInfos().size() > 0) {
+							mReplyAdapter = new ListViewForumReplyAdapter(AskExpertReplyActivity.this, info.getAskAllReplyInfos());
+							mReplysView.setAdapter(mReplyAdapter);
+						} else {
+							UIHelper.ToastMessage(AskExpertReplyActivity.this, "暂无回复列表");
+						}
+					} else {
+						UIHelper.ToastMessage(AskExpertReplyActivity.this, "未获取到数据");
+					}
+				} catch (JsonSyntaxException e) {
+					AppException.json(e).makeToast(AskExpertReplyActivity.this);
+				} catch (AppException e) {
+					e.makeToast(AskExpertReplyActivity.this);
+				}
+			}
+			@Override
+			public void onStart() {
+				mLoadingDialog.show();
+			}
+			@Override
+			public void onFailure(HttpException arg0, String arg1) {
+				mLoadingDialog.dismiss();
+				UIHelper.ToastMessage(AskExpertReplyActivity.this, "数据获取失败，请重试");
+			}
+		});
+	}
+	@OnClick({R.id.send,R.id.back})
+	@Override
+	public void onClick(View arg0) {
+		// TODO Auto-generated method stub
+		switch (arg0.getId()){
+		case R.id.send:
+			replyContents=editText.getText().toString();
+			initView1();
+			editText.setText("");
+			askAll(replyContents);
+			break;
+		case R.id.back:
+			finish();
+			break;
+		}
+	}
+	static  List<ReplyInfo> replyInfos=new ArrayList<ReplyInfo>();
+   private void askAll(String contents) {
+		HttpUtils http = new HttpUtils();
+		RequestParams params = new RequestParams();
+		params.addQueryStringParameter("sessionId", Sscion.getSsid());
+		params.addQueryStringParameter("askAllId", String.valueOf(mAskInfosId));
+		params.addQueryStringParameter("replyContents", contents);
+		http.send(HttpMethod.GET, URLs.EANWER, params, new RequestCallBack<String>() {
+			@Override
+			public void onSuccess(ResponseInfo<String> responseInfo) {
+				try {
+				mLoadingDialog1.dismiss();
+					Result result = JsonUtils.fromArrayJson(responseInfo.result, Result.class);
+					if (!result.OK()) {
+						throw AppException.custom(result.message());
+					} else {
+						/*UIHelper.ToastMessage(AskAllReplyActivity.this, "提问成功");
+						finish();*/
+						UIHelper.ToastMessage(AskExpertReplyActivity.this, "回复成功");
+						String[] a= userDB.select1();
+						AskallInfos askallInfos=new AskallInfos();
+						
+						askallInfos.setContents(replyContents);
+						UserInfo userInfo=new UserInfo();
+						userInfo.setUserName(a[1]);
+						askallInfos.setUserInfo(userInfo);
+						ReplyInfo replyInfo=new ReplyInfo();
+						replyInfo.setUserInfo(userInfo);
+						replyInfo.setReply(replyContents);
+						DateFormat df = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
+						String date =df.format(new Date());
+						replyInfo.setReplyDate(String.valueOf(date));
+						replyInfos.add(replyInfo);
+						for (int i = 0; i < askAllInfos.size(); i++) {
+							replyInfos.removeAll(askAllInfos.get(i).getAskAllReplyInfos());
+							for (int j = 0; j < askAllInfos.get(i).getAskAllReplyInfos().size(); j++) {
+								replyInfos.add(askAllInfos.get(i).getAskAllReplyInfos().get(j));
+							}
+						}
+						askallInfos.setAskAllReplyInfos(replyInfos);
+//						mReplyAdapter.notifyDataSetChanged();
+						mReplyAdapter = new ListViewForumReplyAdapter(AskExpertReplyActivity.this, askallInfos.getAskAllReplyInfos());
+						mReplysView.setAdapter(mReplyAdapter);
+//						loadReplys();
+					}
+				} catch (JsonSyntaxException e) {
+					AppException.json(e).makeToast(AskExpertReplyActivity.this);
+				} catch (AppException e) {
+					e.makeToast(AskExpertReplyActivity.this);
+				}
+			}
+			@Override
+			public void onStart() {
+				mLoadingDialog1.show();
+			}
+			@Override
+			public void onFailure(HttpException arg0, String arg1) {
+				mLoadingDialog1.dismiss();
+				UIHelper.ToastMessage(AskExpertReplyActivity.this, "数据发送失败，请重试");
+			}
+		});
+	}
+}

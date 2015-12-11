@@ -1,0 +1,304 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical" >
+    <RelativeLayout 
+    android:id="@+id/rela1"
+    android:layout_width="fill_parent"
+    android:layout_height="49dp"
+    android:background="@drawable/ic_main_daohang"
+    android:gravity="center_vertical">
+
+     <Button
+         android:id="@+id/left_button"
+         android:layout_width="56dp"
+         android:layout_height="fill_parent"
+         android:layout_alignParentLeft="true"
+         android:layout_alignTop="@+id/right_button"
+         android:background="@drawable/bg_btn_back"
+         android:scaleType="fitXY"
+         android:text="返回"
+         android:textColor="@color/white"
+         android:textSize="16.0sp" />
+
+    <TextView
+        android:id="@+id/main_title"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginLeft="28.0dp"
+        android:layout_toLeftOf="@+id/right_button"
+        android:layout_toRightOf="@+id/left_button"
+        android:gravity="center"
+        android:text="更换皮肤"
+        android:textColor="#ffffff"
+        android:textSize="18sp" />
+
+    <Button
+        android:id="@+id/right_button"
+        android:layout_width="65dp"
+        android:layout_height="49dp"
+       android:background="@drawable/bg_btn_back"
+        android:text="完成"
+        android:textSize="16.0sp"
+         android:textColor="#ffffff"
+        android:layout_alignParentRight="true"
+        android:scaleType="centerInside" />
+    <!-- <TextView 
+        android:layout_below="@id/left_button"
+        android:layout_width="fill_parent"
+        android:layout_height="1.0dp"
+        android:background="#005aaa"/> -->
+    
+    
+</RelativeLayout>
+<ScrollView 
+    android:layout_width="fill_parent"
+    android:layout_height="wrap_content">
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" 
+        android:gravity="center_horizontal"
+        android:padding="10dp">
+        <RelativeLayout 
+            android:id="@+id/relaimage1"
+            android:layout_width="140dp"
+            android:layout_height="140dp"
+            android:layout_margin="5.0dp"
+            android:background="#ffffff"
+             android:layout_alignParentLeft="true"
+            android:layout_alignParentTop="true"
+            >
+             <ImageView
+            android:id="@+id/nub1"
+            android:layout_width="130dp"
+            android:layout_height="130dp"
+            android:layout_margin="5.0dp"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentTop="true"
+            android:src="@drawable/nub1"/>
+             <ImageView 
+                 android:id="@+id/sign_btn1"
+                 android:layout_width="30.0dp"
+                 android:layout_height="30.0dp"
+                 android:layout_alignParentBottom="true"
+                 android:layout_alignParentRight="true"
+                 android:layout_marginBottom="15.0dp"
+                 android:layout_marginRight="15.0dp"
+                 />  
+            
+        </RelativeLayout>
+         <RelativeLayout 
+            android:id="@+id/relaimage2"
+            android:layout_width="140dp"
+            android:layout_height="140dp"
+             android:layout_margin="5.0dp"
+              android:background="#ffffff"
+             android:layout_alignParentTop="true"
+            android:layout_toRightOf="@+id/relaimage1"
+            >
+             <ImageView
+            android:id="@+id/nub2"
+            android:layout_width="130dp"
+            android:layout_height="130dp"
+            android:layout_margin="5.0dp"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentTop="true"
+            android:src="@drawable/nub2"/>
+             <ImageView 
+                 android:id="@+id/sign_btn2"
+                 android:layout_width="30.0dp"
+                 android:layout_height="30.0dp"
+                 android:layout_alignParentBottom="true"
+                 android:layout_alignParentRight="true"
+                 android:layout_marginBottom="15.0dp"
+                 android:layout_marginRight="15.0dp"
+                 />  
+            
+        </RelativeLayout>
+         <RelativeLayout 
+            android:id="@+id/relaimage3"
+            android:layout_width="140dp"
+            android:layout_height="140dp"
+             android:layout_margin="5.0dp"
+              android:background="#ffffff"
+              android:layout_alignParentLeft="true"
+            android:layout_below="@+id/relaimage2"
+            >
+              <ImageView
+            android:id="@+id/nub3"
+            android:layout_width="130dp"
+            android:layout_height="130dp"
+            android:layout_margin="5.0dp"
+            android:src="@drawable/nub3" />
+             <ImageView 
+                 android:id="@+id/sign_btn3"
+                 android:layout_width="30.0dp"
+                 android:layout_height="30.0dp"
+                 android:layout_alignParentBottom="true"
+                 android:layout_alignParentRight="true"
+                 android:layout_marginBottom="15.0dp"
+                 android:layout_marginRight="15.0dp"
+                />  
+            
+        </RelativeLayout>
+           <RelativeLayout 
+            android:id="@+id/relaimage4"
+            android:layout_width="140dp"
+            android:layout_height="140dp"
+             android:layout_margin="5.0dp"
+              android:background="#ffffff"
+            android:layout_toRightOf="@id/relaimage3"
+            android:layout_below="@id/relaimage2"
+            >
+               <ImageView
+            android:id="@+id/nub4"
+            android:layout_width="130dp"
+            android:layout_height="130dp"
+            android:layout_margin="5.0dp"
+            android:src="@drawable/nub4" />
+             <ImageView 
+                 android:id="@+id/sign_btn4"
+                 android:layout_width="30.0dp"
+                 android:layout_height="30.0dp"
+                 android:layout_alignParentBottom="true"
+                 android:layout_alignParentRight="true"
+                 android:layout_marginBottom="15.0dp"
+                 android:layout_marginRight="15.0dp"
+                 />  
+            
+        </RelativeLayout>
+        <RelativeLayout 
+            android:id="@+id/relaimage5"
+            android:layout_width="140dp"
+            android:layout_height="140dp"
+             android:layout_margin="5.0dp"
+              android:background="#ffffff"
+             android:layout_alignParentLeft="true"
+            android:layout_below="@+id/relaimage3"
+            >
+               <ImageView
+            android:id="@+id/nub5"
+            android:layout_width="130dp"
+            android:layout_height="130dp"
+            android:layout_margin="5.0dp"
+            android:src="@drawable/nub5" />
+             <ImageView 
+                 android:id="@+id/sign_btn5"
+                 android:layout_width="30.0dp"
+                 android:layout_height="30.0dp"
+                 android:layout_alignParentBottom="true"
+                 android:layout_alignParentRight="true"
+                 android:layout_marginBottom="15.0dp"
+                 android:layout_marginRight="15.0dp"
+                 />  
+            
+        </RelativeLayout>
+      <RelativeLayout 
+            android:id="@+id/relaimage6"
+            android:layout_width="140dp"
+            android:layout_height="140dp"
+             android:layout_margin="5.0dp"
+              android:background="#ffffff"
+            android:layout_toRightOf="@id/relaimage5"
+            android:layout_below="@id/relaimage4"
+            >
+               <ImageView
+            android:id="@+id/nub6"
+            android:layout_width="130dp"
+            android:layout_height="130dp"
+            android:layout_margin="5.0dp"
+            android:src="@drawable/nub6" />
+             <ImageView 
+                 android:id="@+id/sign_btn6"
+                 android:layout_width="30.0dp"
+                 android:layout_height="30.0dp"
+                 android:layout_alignParentBottom="true"
+                 android:layout_alignParentRight="true"
+                 android:layout_marginBottom="15.0dp"
+                 android:layout_marginRight="15.0dp"
+                 />  
+            
+        </RelativeLayout>
+ <RelativeLayout 
+            android:id="@+id/relaimage7"
+            android:layout_width="140dp"
+            android:layout_height="140dp"
+             android:layout_margin="5.0dp"
+              android:background="#ffffff"
+             android:layout_alignParentLeft="true"
+            android:layout_below="@+id/relaimage5"
+            >
+               <ImageView
+            android:id="@+id/nub7"
+            android:layout_width="130dp"
+            android:layout_height="130dp"
+            android:layout_margin="5.0dp"
+            android:src="@drawable/nub7" />
+             <ImageView 
+                 android:id="@+id/sign_btn7"
+                 android:layout_width="30.0dp"
+                 android:layout_height="30.0dp"
+                 android:layout_alignParentBottom="true"
+                 android:layout_alignParentRight="true"
+                 android:layout_marginBottom="15.0dp"
+                 android:layout_marginRight="15.0dp"
+                 />  
+            
+        </RelativeLayout>
+         <RelativeLayout 
+            android:id="@+id/relaimage8"
+            android:layout_width="140dp"
+            android:layout_height="140dp"
+             android:layout_margin="5.0dp"
+              android:background="#ffffff"
+            android:layout_toRightOf="@id/relaimage7"
+            android:layout_below="@id/relaimage6"
+            >
+               <ImageView
+            android:id="@+id/nub8"
+            android:layout_width="130dp"
+            android:layout_height="130dp"
+            android:layout_margin="5.0dp"
+            android:src="@drawable/nub8" />
+             <ImageView 
+                 android:id="@+id/sign_btn8"
+                 android:layout_width="30.0dp"
+                 android:layout_height="30.0dp"
+                 android:layout_alignParentBottom="true"
+                 android:layout_alignParentRight="true"
+                 android:layout_marginBottom="15.0dp"
+                 android:layout_marginRight="15.0dp"
+                 />  
+            
+        </RelativeLayout>
+        <Button
+            android:id="@+id/bgbtn"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignLeft="@+id/relaimage7"
+            android:layout_alignRight="@+id/relaimage8"
+            android:layout_below="@+id/relaimage7"
+            android:layout_marginTop="30dp"
+            android:background="@color/lightblue"
+            android:text="更多背景"
+            android:textColor="@color/white" />
+
+        <Button
+            android:id="@+id/mbgbtn"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignLeft="@+id/bgbtn"
+            android:layout_alignRight="@+id/bgbtn"
+            android:layout_below="@+id/bgbtn"
+            android:background="@color/lightblue"
+            android:layout_marginTop="10dp"
+            android:text="默认背景"
+            android:textColor="@color/white"/>
+
+    </RelativeLayout>
+</ScrollView>
+</LinearLayout>

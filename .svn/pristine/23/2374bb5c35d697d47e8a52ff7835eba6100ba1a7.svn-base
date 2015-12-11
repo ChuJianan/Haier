@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/footerView_ll"
+    android:layout_width="fill_parent"
+    android:layout_height="48.0dip"
+    android:layout_alignParentBottom="true"
+    android:background="@color/white"
+    android:gravity="bottom"
+    android:orientation="horizontal" >
+
+    <Button
+        android:id="@+id/btn_home"
+        android:layout_width="0dp"
+        android:layout_height="fill_parent"
+        android:layout_gravity="center_vertical"
+        android:layout_weight="1.0"
+        android:background="@drawable/btn_background_item"
+        android:text="大区级"
+        android:textColor="@color/lightblue"
+        android:textSize="16.0dip" />
+
+    <Button
+        android:id="@+id/btn_cloud"
+        android:layout_width="0dp"
+        android:layout_height="fill_parent"
+        android:layout_gravity="center_vertical"
+        android:layout_weight="1.0"
+        android:background="@drawable/btn_background_item"
+        android:text="城市级"
+        android:textColor="@color/lightblue"
+        android:textSize="16.0dip" />
+
+
+    <Button
+        android:id="@+id/btn_notice"
+        android:layout_width="0dp"
+        android:layout_height="fill_parent"
+        android:layout_gravity="center_vertical"
+        android:layout_weight="1.0"
+        android:background="@drawable/btn_background_item"
+        android:text="部门级"
+        android:textColor="@color/lightblue"
+        android:textSize="16.0dip" />
+
+    <Button
+        android:id="@+id/btn_more"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_vertical"
+        android:layout_weight="1.0"
+        android:background="@drawable/btn_background_item"
+        android:text="总部级"
+        android:textColor="@color/lightblue"
+        android:textSize="16.0dip" />
+
+</LinearLayout>

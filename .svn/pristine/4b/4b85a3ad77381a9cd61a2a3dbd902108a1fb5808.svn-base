@@ -1,0 +1,75 @@
+package com.haier.activity.fragment;
+
+
+import android.os.Bundle;
+import android.support.v4.app.Fragment;
+import android.view.LayoutInflater;
+import android.view.View;
+import android.view.View.OnClickListener;
+import android.view.ViewGroup;
+import android.widget.ImageButton;
+import com.haier.R;
+import com.haier.bean.Music1;
+import com.lidroid.xutils.ViewUtils;
+import com.lidroid.xutils.view.annotation.ViewInject;
+import com.lidroid.xutils.view.annotation.event.OnClick;
+
+public class SetFragment extends Fragment implements OnClickListener{
+    @ViewInject(R.id.sound1)   private ImageButton music1;
+    @ViewInject(R.id.sound2)   private ImageButton music2;
+    private boolean mus=false;
+    private int sou=0;
+    private int sou1=0;
+	@Override
+	public View onCreateView(LayoutInflater inflater, ViewGroup container,
+			Bundle savedInstanceState) {
+		View newsLayout = inflater.inflate(R.layout.soundset, container,
+				false);
+		ViewUtils.inject(this, newsLayout);
+		Test();
+		return newsLayout;
+	}
+	private void Test() {
+		// TODO Auto-generated method stub
+		if(Music1.isMusic1()==true){
+			music1.setBackgroundResource(R.drawable.ic_shegnyin);
+		}else {
+			music1.setBackgroundResource(R.drawable.sound1);
+		}
+		if(Music1.isMusic2()==true){
+			music2.setBackgroundResource(R.drawable.ic_shengyin2);
+		}else {
+			music2.setBackgroundResource(R.drawable.sound2);
+		}
+	}
+	@OnClick({R.id.sound1,R.id.sound2,R.id.okok})
+	@Override
+	public void onClick(View arg0) {
+		// TODO Auto-generated method stub
+		switch (arg0.getId()){  
+		case R.id.sound1:
+			if(sou==0){
+				music1.setBackgroundResource(R.drawable.ic_shegnyin);
+				Music1.setMusic1(true);
+				sou=1;
+			}else {
+				music1.setBackgroundResource(R.drawable.sound1);
+				Music1.setMusic1(false);
+				sou=0;
+			}
+			break;
+		case R.id.sound2:
+			if(sou1==0){
+				music2.setBackgroundResource(R.drawable.ic_shengyin2);
+				Music1.setMusic2(true);
+				sou1=1;
+			}else {
+				music2.setBackgroundResource(R.drawable.sound2);
+				Music1.setMusic2(false);
+				sou1=0;
+			}
+			break;
+		
+		}
+	}
+}

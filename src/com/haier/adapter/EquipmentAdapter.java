@@ -1,0 +1,124 @@
+package com.haier.adapter;
+
+import java.io.IOException;
+import java.io.InputStream;
+import java.net.HttpURLConnection;
+import java.net.MalformedURLException;
+import java.net.URL;
+import java.util.List;
+
+import android.content.Context;
+import android.graphics.Bitmap;
+import android.graphics.BitmapFactory;
+import android.os.Handler;
+import android.os.Message;
+import android.view.LayoutInflater;
+import android.view.View;
+import android.view.ViewGroup;
+import android.widget.BaseAdapter;
+import android.widget.ImageView;
+import android.widget.TextView;
+
+import com.haier.R;
+import com.haier.bean.Equipments;
+import com.haier.bean.URLs;
+import com.lidroid.xutils.BitmapUtils;
+
+public class EquipmentAdapter extends  BaseAdapter{
+	Context context;
+	List<Equipments> list;
+	private BitmapUtils bmpUtils;
+	String imageURL;
+	private LayoutInflater listContainer; // 视图容器
+	static class ViewHolder { //自定义控件集合  
+		public ImageView icon;
+		public TextView title;
+//		public TextView size;
+//		public TextView author;
+	}
+	public EquipmentAdapter (Context context,List<Equipments> list){
+		this.bmpUtils = new BitmapUtils(context);
+		this.listContainer = LayoutInflater.from(context);
+		this.list=list;
+	}
+	ViewHolder holder = null;
+	@Override
+	public View getView(int arg0, View convertView, ViewGroup arg2) {
+		// TODO Auto-generated method stub
+		
+		if (convertView == null) {
+			convertView = listContainer.inflate(R.layout.equipment_item, null);
+			holder = new ViewHolder();
+			holder.title=(TextView)convertView.findViewById(R.id.textname);
+			holder.icon=(ImageView)convertView.findViewById(R.id.equipimage);
+			convertView.setTag(holder);
+		} else {
+			holder = (ViewHolder)convertView.getTag();
+		}
+		
+		Equipments iNews=list.get(arg0);
+		holder.title.setText(iNews.getName());
+		imageURL=iNews.getPath();
+		bmpUtils.display(holder.icon, URLs.HOST+iNews.getPath());
+		//loadimage(iNews);
+		return convertView;
+	}
+	private void loadimage(final Equipments iNews) {
+		// TODO Auto-generated method stub
+        new Thread(new Runnable() {  
+            @Override  
+            public void run() {  
+           	 Message msg=new Message();
+           	 msg.obj=returnBitMap(URLs.HOST+iNews.getPath());
+                handler.sendMessage(msg);
+            }  
+        }).start();  
+	}
+	Handler handler = new Handler() {  
+        @Override  
+        public void handleMessage(Message msg) {
+        	super.handleMessage(msg);
+        	holder.icon.setImageBitmap((Bitmap) msg.obj);
+        	}
+	};
+	private Bitmap returnBitMap(String url) {
+		// TODO Auto-generated method stub
+		 URL myFileUrl = null;  
+			Bitmap bitmap = null;  
+			try {  
+			myFileUrl = new URL(url);  
+			} catch (MalformedURLException e) {  
+			e.printStackTrace();  
+			}  
+			try {  
+			HttpURLConnection conn = (HttpURLConnection) myFileUrl.openConnection();  
+			conn.setDoInput(true);  
+			conn.connect();  
+			InputStream is = conn.getInputStream();  
+			bitmap = BitmapFactory.decodeStream(is);  
+			is.close();  
+			} catch (IOException e) {  
+			e.printStackTrace();  
+			}  
+			return bitmap;
+		}		
+	@Override
+	public int getCount() {
+		// TODO Auto-generated method stub
+		return list == null ? 0 : list.size();
+	}
+
+	@Override
+	public Object getItem(int arg0) {
+		// TODO Auto-generated method stub
+		return list == null ? null : list.get(arg0-1);
+	}
+	@Override
+	public long getItemId(int arg0) {
+		// TODO Auto-generated method stub
+		return 0;
+	}
+
+
+
+}

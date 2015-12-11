@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    >
+    <RelativeLayout
+        android:layout_width="350dp"
+        android:layout_height="200dp"
+        android:background="@drawable/ic_dilog">
+        <LinearLayout 
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:layout_centerInParent="true"
+            android:gravity="center">
+            
+            <TextView 
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="17sp"
+                android:text="都记住了么？"
+                android:textColor="#b7d5ff"
+                />
+               <TextView 
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="17sp"
+                android:text="下面让我们玩一个游戏"
+                android:layout_marginTop="5.0dp"
+                android:textColor="#b7d5ff"
+                />
+                  <TextView 
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="17sp"
+                 android:layout_marginTop="5.0dp"
+                 android:text="检验一下吧！"
+                android:textColor="#b7d5ff"
+                />
+        </LinearLayout>
+        
+        <ImageView
+            android:id="@+id/ok"
+            android:layout_width="30.0dp"
+            android:layout_height="30.0dp"
+            android:layout_alignParentLeft="true"
+            android:layout_marginLeft="15.0dp"
+            android:layout_marginBottom="15.0dp"
+            android:layout_alignParentBottom="true"
+            android:background="@drawable/ic_dilogok" />
+        <ImageView
+            android:id="@+id/second"
+            android:layout_width="100.0dp"
+            android:layout_height="30.0dp"
+            android:layout_marginBottom="15.0dp"
+            android:layout_alignParentRight="true"
+            android:layout_marginRight="15.0dp"
+            android:layout_alignParentBottom="true"
+            android:background="@drawable/ic_dilogsecond" />
+    </RelativeLayout>
+    
+</RelativeLayout>

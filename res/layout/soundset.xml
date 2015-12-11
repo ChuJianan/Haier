@@ -1,0 +1,158 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    >
+    <RelativeLayout
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+         android:background="@drawable/ic_game_yinyuedi">
+         <ScrollView 
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent">
+        <RelativeLayout 
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent"
+            android:layout_marginTop="30.0dp"
+            android:layout_marginBottom="40.0dp"
+            android:gravity="center_horizontal"
+            >
+            <RelativeLayout 
+                 android:id="@+id/uy"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10.0dp">
+                <LinearLayout 
+                     android:id="@+id/yu"
+                    android:layout_width="40.0dp"
+                    android:layout_height="65.0dp"
+                    android:orientation="vertical">
+                    <ImageView 
+                        android:layout_width="40.0dp"
+                        android:layout_height="40.0dp"
+                        android:background="@drawable/ic_game_yinyue"/>
+                    <ImageView 
+                        android:layout_width="40.0dp"
+                        android:layout_height="20.0dp"
+                        android:layout_marginTop="5.0dp"
+                        android:background="@drawable/ic_game_yinyuezi"/>
+                </LinearLayout>
+                <RelativeLayout 
+                    android:layout_width="150.0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_centerVertical="true"
+                    android:layout_marginLeft="30.0dp"
+                    android:layout_toRightOf="@id/yu"
+                    >
+                    <ImageView 
+                        android:id="@+id/img1"
+                        android:layout_width="150.0dp"
+                        android:layout_height="10.0dp"
+                        android:layout_centerVertical="true"
+                        android:background="@drawable/ic_game_tiao2"/>
+                    <ImageView 
+                        android:id="@+id/img2"
+                        android:layout_width="25.0dp"
+                        android:layout_height="15.0dp"
+                        android:background="@drawable/ic_game_kaiguan"/>
+                      <ImageView 
+                        android:id="@+id/img3"
+                        android:layout_width="25.0dp"
+                        android:layout_height="15.0dp"
+                        android:layout_alignParentRight="true"
+                        />
+                </RelativeLayout>
+                
+                
+                
+            </RelativeLayout>
+            <RelativeLayout 
+                 android:layout_below="@id/uy"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="20.0dp"
+                android:layout_marginBottom="10.0dp">
+                <LinearLayout 
+                     android:id="@+id/yuyu"
+                    android:layout_width="40.0dp"
+                    android:layout_height="65.0dp"
+                    android:orientation="vertical">
+                    <ImageView 
+                        android:layout_width="40.0dp"
+                        android:layout_height="40.0dp"
+                        android:background="@drawable/ic_game_yinxiao"/>
+                    <ImageView 
+                        android:layout_width="40.0dp"
+                        android:layout_height="20.0dp"
+                        android:layout_marginTop="5.0dp"
+                        android:background="@drawable/ic_game_yinxiaozi"/>
+                </LinearLayout>
+                <RelativeLayout 
+                    android:layout_width="150.0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_centerVertical="true"
+                    android:layout_marginLeft="30.0dp"
+                    android:layout_toRightOf="@id/yuyu"
+                    >
+                    <ImageView 
+                        android:id="@+id/img4"
+                        android:layout_width="150.0dp"
+                        android:layout_height="10.0dp"
+                        android:layout_centerVertical="true"
+                        android:background="@drawable/ic_game_tiao2"/>
+                    <ImageView 
+                        android:id="@+id/img5"
+                        android:layout_width="25.0dp"
+                        android:layout_height="15.0dp"
+                        android:background="@drawable/ic_game_kaiguan"/>
+                      <ImageView 
+                        android:id="@+id/img6"
+                        android:layout_width="25.0dp"
+                        android:layout_height="15.0dp"
+                        android:layout_alignParentRight="true"
+                        />
+                </RelativeLayout>
+                
+                
+                
+            </RelativeLayout>
+           <!--  <ImageButton
+                android:id="@+id/sound1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="5.0dp"
+                android:background="@drawable/sound1"
+                ></ImageButton>
+             <ImageButton
+                android:id="@+id/sound2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_toRightOf="@id/sound1"
+                android:layout_marginLeft="50.0dp"
+                android:background="@drawable/sound2"
+                ></ImageButton> -->
+                
+        </RelativeLayout>
+        <!-- <ImageView
+            android:id="@+id/okok"
+            android:layout_width="30.0dp"
+            android:layout_height="30.0dp"
+            android:layout_alignParentRight="true"
+            android:layout_marginBottom="10.0dp"
+            android:layout_marginRight="40.0dp"
+            android:layout_alignParentBottom="true"
+            android:background="@drawable/ic_dilogok" /> -->
+
+        <!-- <ImageView
+            android:id="@+id/second"
+            android:layout_width="60.0dp"
+            android:layout_height="30.0dp"
+            android:layout_marginBottom="10.0dp"
+            android:layout_alignParentRight="true"
+            android:layout_marginRight="10.0dp"
+                android:layout_alignParentBottom="true"
+            android:background="@drawable/ic_dilogsecond" /> -->
+            </ScrollView>
+    </RelativeLayout>
+    
+</RelativeLayout>

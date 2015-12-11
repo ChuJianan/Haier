@@ -1,0 +1,91 @@
+package com.haier.activity;
+
+import com.haier.R;
+import com.haier.bean.Base;
+import com.haier.bean.INews;
+import com.lidroid.xutils.ViewUtils;
+import com.lidroid.xutils.view.annotation.ViewInject;
+import com.lidroid.xutils.view.annotation.event.OnClick;
+
+import android.R.raw;
+import android.annotation.SuppressLint;
+import android.app.Activity;
+import android.os.Bundle;
+import android.view.View;
+import android.view.View.OnClickListener;
+import android.webkit.WebChromeClient;
+import android.webkit.WebView;
+import android.webkit.WebViewClient;
+import android.widget.Button;
+import android.widget.TextView;
+
+public class BrowserActivity extends Activity implements OnClickListener{
+
+	@ViewInject(R.id.webView)
+	private WebView mWebView;
+	@ViewInject(R.id.top_title)private   TextView top_title;
+	@ViewInject(R.id.title)private TextView title;
+	@ViewInject(R.id.ask) private Button askButton;
+	private String mUrl;
+	private String mData;
+	private String mTitle;
+	private String top;
+	@Override
+	protected void onCreate(Bundle savedInstanceState) {
+		// TODO Auto-generated method stub
+		super.onCreate(savedInstanceState);
+		setContentView(R.layout.activity_browser);
+		ViewUtils.inject(this);
+		mData=getIntent().getStringExtra("content");
+		top=getIntent().getStringExtra("top_title");
+		mTitle=getIntent().getStringExtra("title");
+		askButton.setVisibility(View.INVISIBLE);
+		top_title.setText(top);
+		top_title.setTextSize(16);
+		title.setText(mTitle);
+		initView();
+		initData();
+	}
+	@SuppressLint("SetJavaScriptEnabled")
+	private void initView() {
+		mWebView = (WebView) findViewById(R.id.webView);
+		mWebView.getSettings().setJavaScriptEnabled(true);
+		mWebView.getSettings().setDefaultTextEncodingName(Base.UTF_8);
+		mWebView.getSettings().setLoadWithOverviewMode(true);
+		mWebView.getSettings().setSupportZoom(true);
+		mWebView.getSettings().setBuiltInZoomControls(true);
+		mWebView.setWebChromeClient(new WebChromeClient() {
+			@Override
+			public void onReceivedTitle(WebView view, String title) {
+				setTitle(title);
+				super.onReceivedTitle(view, title);
+			}
+		});
+		mWebView.setWebViewClient(new WebViewClient() {
+			@Override
+			public boolean shouldOverrideUrlLoading(WebView view, String url) {
+				view.loadUrl(url);
+				return true;
+			}
+		});
+	}
+	
+	private void initData() {
+		if (mUrl != null) {
+			mWebView.loadUrl(mUrl);
+		} else if (mData != null) {
+			mWebView.loadDataWithBaseURL(null, mData, "text/html", Base.UTF_8, null);
+		}
+	}
+	@OnClick({R.id.back})
+	@Override
+	public void onClick(View v) {
+		// TODO Auto-generated method stub
+		switch (v.getId()) {
+		case R.id.back:
+			finish();
+			break;
+		}
+	}
+	
+}

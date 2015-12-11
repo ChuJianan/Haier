@@ -1,0 +1,5 @@
+<resources>
+
+    <string name="app_name">海尔销售精英挑战赛</string>
+	<string name="string">[{"sessionId":"7DAA1A7057B92480F7C5D49CA5CEE5BC","accessFlag":{"flag":6,"describe":"访问成功!"},"questions":[{"id":1,"title":"水电费是飒飒飞洒地方十大23","answer":2,"optionList":[{"id":18,"orderIndex":1,"qcontext":"撒地方123"},{"id":19,"orderIndex":2,"qcontext":"阿斯蒂芬223"},{"id":20,"orderIndex":3,"qcontext":"撒旦飞洒323"},{"id":21,"orderIndex":4,"qcontext":"阿斯蒂芬423"}]},{"id":4,"title":"sadfsaf","answer":2,"optionList":[{"id":16,"orderIndex":1,"qcontext":"sadfsaf"},{"id":17,"orderIndex":2,"qcontext":"sfddsfs"}]}],"rules":[{"seconds":5,"score":30},{"seconds":10,"score":25},{"seconds":15,"score":20},{"seconds":20,"score":15},{"seconds":25,"score":10},{"seconds":30,"score":5}]}]</string>
+</resources>
